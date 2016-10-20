@@ -17,7 +17,8 @@ import android.widget.Toast;
 public class fifth_Activity extends ActionBarActivity {
     IntentFilter intentFilter;
       private NetworkChangeReceiver networkChangeReceiver;
-    private Button saveData,readDdata;
+    private Button saveData,readDdata,Create_database;
+    private MyDatabaseHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,9 @@ public class fifth_Activity extends ActionBarActivity {
 
         saveData=(Button)findViewById(R.id.save_data);
         readDdata=(Button)findViewById(R.id.read_data);
+        Create_database=(Button)findViewById(R.id.create_database);
+        dbHelper=new MyDatabaseHelper(this,"BookStore.db",null,1);
+
         saveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +50,12 @@ public class fifth_Activity extends ActionBarActivity {
             public void onClick(View v) {
                 SharedPreferences pref=getSharedPreferences("data",MODE_PRIVATE);
                 String name=pref.getString("name","");
+            }
+        });
+        Create_database.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHelper.getWritableDatabase();
             }
         });
     }

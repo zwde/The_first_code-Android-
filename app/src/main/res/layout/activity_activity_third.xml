@@ -12,18 +12,21 @@
     <include layout="@layout/title"/>
     -->
     <!--引入自定义控件(需指明完整类名)-->
+
     <com.example.zw.the_first_code.TitleLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         ></com.example.zw.the_first_code.TitleLayout>
 <!--水平进度条 -->
-    <ProgressBar
+   <ProgressBar
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/process_bar"
        style="?android:attr/progressBarStyleHorizontal"
-android:max="100"
+     android:max="100"
+
         />
+
 <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -44,4 +47,5 @@ android:max="100"
         android:layout_height="wrap_content"
         android:text="跳转到Fourth_Activity"
         android:id="@+id/Btn2"/>
+
 </LinearLayout>

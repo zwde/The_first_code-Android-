@@ -40,4 +40,17 @@
         android:id="@+id/Btn5"
         android:layout_below="@+id/Btn3"
         android:layout_toRightOf="@+id/Btn3"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start_service"
+        android:id="@+id/start_service"
+        android:layout_below="@+id/Btn4"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stop service"
+        android:id="@+id/stop_service"
+        android:layout_below="@+id/Btn5"
+        android:layout_toRightOf="@+id/start_service"/>
 </RelativeLayout>

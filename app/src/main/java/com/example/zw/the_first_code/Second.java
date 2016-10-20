@@ -27,15 +27,7 @@ btn2=(Button)findViewById(R.id.Btn2);
         btn1=(Button)findViewById(R.id.Btn1);
       btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
-       /* btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //隐式调用intent 先是action 然后可以加category，可以加多个category，看AndroidManifest.xml
-                Intent intent=new Intent("third_activity");
-                intent.addCategory("category_third");
-                startActivity(intent);
-            }
-        });*/
+
     }
 
 
@@ -44,12 +36,17 @@ btn2=(Button)findViewById(R.id.Btn2);
     switch (v.getId()){
         case R.id.Btn1:
             //隐式调用intent 先是action 然后可以加category，可以加多个category，看AndroidManifest.xml
-            Intent intent=new Intent("third_activity");
+          Intent intent=new Intent();
+            intent.setAction("third_activity");
             intent.addCategory("category_third");
+          //  在AndroidManifest.xml中一定要有<category android:name="android.intent.category.DEFAULT"/>这句
             startActivity(intent);
             break;
+
+
+
         case R.id.Btn2:
-            Toast.makeText(Second.this,"hello",Toast.LENGTH_SHORT);
+            Toast.makeText(Second.this,"hello",Toast.LENGTH_SHORT).show();
             break;
     }
     }
